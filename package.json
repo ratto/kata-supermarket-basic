@@ -2,11 +2,11 @@
   "name": "kata-supermarket-basic",
   "version": "1.0.0",
   "description": "Basic supermarket system exercise",
-  "main": "server.ts",
+  "main": "src/server/index.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-esm ./src/app/server.ts"
+    "dev": "ts-node-esm ./src/server/index.ts"
   },
   "author": "Pedro Paixão",
   "license": "MIT",
