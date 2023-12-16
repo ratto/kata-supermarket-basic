@@ -17,4 +17,4 @@ const { url } = await startStandaloneServer(server, {
   listen: { port: 4042 },
 })
 
-console.log(`🚀  Server ready at: ${url}`)
+console.log(`🚀 Server ready at: ${url}`)

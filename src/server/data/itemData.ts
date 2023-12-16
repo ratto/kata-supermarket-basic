@@ -18,10 +18,22 @@ const items: Item[] = [
   }
 ]
 
-export function selectItems(): Item[] {
-  return items
+export interface IItemRepository {
+  selectItems(): Promise<Item[] | undefined>;
+  selectItem(): Promise<Item | undefined>;
 }
 
-export function selectItemById(id: string): Item | undefined {
-  return items.find(item => item.id == id)
+export class ItemRepository implements IItemRepository {
+  /**
+   *
+   */
+  constructor() {}
+
+  public selectItems = async (): Promise<Item[] | undefined> => {
+    return items;
+  }
+
+  public selectItem = async (): Promise<Item | undefined> => {
+    return undefined;
+  }
 }

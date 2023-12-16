@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as service from "../../service/itemService.js"
+import { ItemService } from "../../service/itemService.js"
+
+const service = new ItemService();
 
 export const itemResolvers = {
   Query: {
-    item: (parent: any, args: any, context: any, info: any) => service.getItemById(parent, args, context, info),
+    item: (/* parent: any, args: any, context: any, info: any */) => service.getItem(/* parent, args, context, info */),
     items: () => service.getItems()
   }
 }
