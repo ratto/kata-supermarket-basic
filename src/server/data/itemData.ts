@@ -1,3 +1,4 @@
+import { injectable } from "inversify";
 import { Item } from "../types/Item.js"
 
 const items: Item[] = [
@@ -23,6 +24,7 @@ export interface IItemRepository {
   selectItem(): Promise<Item | undefined>;
 }
 
+@injectable()
 export class ItemRepository implements IItemRepository {
   /**
    *

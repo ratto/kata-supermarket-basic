@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ItemService } from "../../service/itemService.js"
+import { IItemService } from "../../service/itemService.js"
 
-const service = new ItemService();
+let service: IItemService;
 
 export const itemResolvers = {
   Query: {

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IItemRepository, ItemRepository } from "../data/itemData.js";
+import { inject, injectable } from "inversify";
+import { IItemRepository } from "../data/itemData.js";
 import { Item } from "../types/Item.js";
 
 /* export function getItems(): Item[] {
@@ -20,15 +21,14 @@ export interface IItemService {
   getItem(): Promise<Item | undefined>;
 }
 
+@injectable()
 export class ItemService implements IItemService {
   private data: IItemRepository;
 
   /**
    *
    */
-  constructor() {
-    const data: ItemRepository = new ItemRepository();
-
+  constructor(@inject('IItemRepository') data: IItemRepository) {
     this.data = data;
   }
 
